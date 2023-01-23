@@ -1,5 +1,6 @@
 package cn.year.jarforthenewyear.control;
 
+import cn.year.jarforthenewyear.Delay;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -99,12 +100,11 @@ public class controller{
         ft.setNode(Scene1);
         ft.play();
         ft.setOnFinished(e->{
-            
             ft2.setDuration(Duration.seconds(3));
             ft2.setFromValue(0);
             ft2.setToValue(1);
             ft2.setNode(Scene1);
-            ft2.play();
+            Delay.delayRunInUIThread(ft2.play(),3000);
             ft2.setOnFinished(ex->{
                 FadeTransition ftI = new FadeTransition();
                 FadeTransition ft2I= new FadeTransition();
@@ -115,11 +115,7 @@ public class controller{
                 ftI.setNode(Scene2);
                 ftI.play();
                 ftI.setOnFinished(exe->{
-                    try {
-                        Thread.sleep(3000);
-                    } catch (InterruptedException exec) {
-                        throw new RuntimeException(exec);
-                    }
+                    Delay.sleep(3000);
                     ft2I.setDuration(Duration.seconds(3));
                     ft2I.setFromValue(0);
                     ft2I.setToValue(1);
@@ -135,11 +131,7 @@ public class controller{
                         ftII.setNode(Scene3);
                         ftII.play();
                         ftII.setOnFinished(execu->{
-                            try {
-                                Thread.sleep(3000);
-                            } catch (InterruptedException execut) {
-                                throw new RuntimeException(execut);
-                            }
+                            Delay.sleep(3000);
                             ft2II.setDuration(Duration.seconds(3.0));
                             ft2II.setFromValue(0);
                             ft2II.setToValue(1);
