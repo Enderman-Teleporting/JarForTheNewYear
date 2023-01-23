@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.year.jarforthenewyear.control.controller">
+   <children>
+      <AnchorPane fx:id="Scene4" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Scene4.jpeg" />
+               </image></ImageView>
+            <Label fx:id="Scene4Text" alignment="CENTER" layoutY="97.0" prefHeight="206.0" prefWidth="600.0" text="新年快乐!" textFill="RED">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Scene3" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="406.0" fitWidth="600.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Scene3.jpg" />
+               </image></ImageView>
+            <Label fx:id="Scene3Text" alignment="BOTTOM_CENTER" prefHeight="400.0" prefWidth="600.0" text="而升起的 是$year_now黎明希望与欢愉的太阳" textFill="#ffe469">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Scene2" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Scene2.png" />
+               </image></ImageView>
+            <Label fx:id="Scene2Text" alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" text="\$year及其留下的遗憾迎来了终章" textFill="WHITE">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Scene1" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@clock.gif" />
+               </image></ImageView>
+            <Label fx:id="Scene1Text" alignment="CENTER" layoutX="148.0" layoutY="331.0" prefHeight="55.0" prefWidth="305.0" text="随着时钟的指针" textFill="WHITE">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
