@@ -1,9 +1,9 @@
 package cn.year.jarforthenewyear.control;
 
-import cn.year.jarforthenewyear.Delay;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
@@ -11,6 +11,9 @@ import javafx.util.Duration;
 import java.util.Calendar;
 
 public class controller{
+    @FXML
+    private Button button;
+
     @FXML
     private AnchorPane Scene1;
 
@@ -90,84 +93,70 @@ public class controller{
 
     @FXML
     void ffe469(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onAction(ActionEvent event) {
         Calendar calendar=Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR)-1;
         int year_now=calendar.get(Calendar.YEAR);
+        button.setVisible(false);
+        Scene1.setVisible(true);
         Scene1Text.setText("随着时钟的指针");
-        FadeTransition ft = new FadeTransition(Duration.seconds(3.0));
-        FadeTransition ft2= new FadeTransition(Duration.seconds(3.0));
-        ft.setFromValue(1);
-        ft.setToValue(0);
-        ft.setNode(Scene1);
-        ft.play();
+        Scene2Text.setText(year+"及其留下的遗憾迎来了终章");
+        Scene3Text.setText("而升起的 是"+year_now+"黎明希望与欢愉的太阳");
+        Scene4Text.setText("新年快乐!");
+        FadeTransition ft=new FadeTransition(Duration.seconds(3),Scene1);
+        ft.setFromValue(0);
+        ft.setToValue(1);
         ft.setOnFinished(e->{
-            Delay.delayRunInUIThread(new Runnable() {
-                @Override
-                public void run() {
-
-                }
-            }, 3000);
-            ft2.setDuration(Duration.seconds(3));
-            ft2.setFromValue(0);
-            ft2.setToValue(1);
-            ft2.setNode(Scene1);
-            ft2.play();
-            ft2.setOnFinished(ex->{
-                FadeTransition ftI = new FadeTransition();
-                FadeTransition ft2I= new FadeTransition();
-                Scene2Text.setText(year+"及其留下的遗憾迎来了终章");
-                ftI.setDuration(Duration.seconds(3));
-                ftI.setFromValue(1);
-                ftI.setToValue(0);
-                ftI.setNode(Scene2);
+            FadeTransition ft1=new FadeTransition(Duration.seconds(3),Scene1);
+            ft1.setFromValue(1);
+            ft1.setToValue(0);
+            ft1.setOnFinished(ex->{
+                Scene1.setVisible(false);
+                Scene2.setVisible(true);
+                FadeTransition ftI=new FadeTransition(Duration.seconds(3),Scene2);
+                ftI.setFromValue(0);
+                ftI.setToValue(1);
                 ftI.setOnFinished(exe->{
-                    Delay.delayRunInUIThread(new Runnable() {
-                                                 @Override
-                                                 public void run() {
-
-                                                 }
-                                             },3000);
-                            ft2I.setDuration(Duration.seconds(3));
-                    ft2I.setFromValue(0);
-                    ft2I.setToValue(1);
-                    ft2I.setNode(Scene2);
-                    ft2I.play();
-                    ft2I.setOnFinished(exec->{
-                        Scene3Text.setText("而升起的 是"+year_now+"黎明希望与欢愉的太阳");
-                        FadeTransition ftII = new FadeTransition();
-                        FadeTransition ft2II= new FadeTransition();
-                        ftII.setDuration(Duration.seconds(3));
-                        ftII.setFromValue(1);
-                        ftII.setToValue(0);
-                        ftII.setNode(Scene3);
-                        ftII.play();
+                    FadeTransition ft1I=new FadeTransition(Duration.seconds(3),Scene2);
+                    ft1I.setFromValue(1);
+                    ft1I.setToValue(0);
+                    ft1I.setOnFinished(exec->{
+                        Scene2.setVisible(false);
+                        Scene3.setVisible(true);
+                        FadeTransition ftII=new FadeTransition(Duration.seconds(3),Scene3);
+                        ftII.setFromValue(0);
+                        ftII.setToValue(1);
                         ftII.setOnFinished(execu->{
-                            Delay.delayRunInUIThread(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                }
-                            },3000);
-                            ft2II.setDuration(Duration.seconds(3.0));
-                            ft2II.setFromValue(0);
-                            ft2II.setToValue(1);
-                            ft2II.setNode(Scene3);
-                            ft2II.play();
-                            ft2II.setOnFinished(executi->{
-                                Scene4Text.setText("新年快乐!");
-                                FadeTransition ftIII = new FadeTransition();
-                                FadeTransition ft2III= new FadeTransition();
-                                ftIII.setDuration(Duration.seconds(3));
-                                ftIII.setFromValue(1);
-                                ftIII.setToValue(0);
-                                ftIII.setNode(Scene4);
+                            FadeTransition ft1II=new FadeTransition(Duration.seconds(3),Scene3);
+                            ft1II.setFromValue(1);
+                            ft1II.setToValue(0);
+                            ft1II.setOnFinished(execut->{
+                                Scene3.setVisible(false);
+                                Scene4.setVisible(true);
+                                FadeTransition ftIII=new FadeTransition(Duration.seconds(3),Scene4);
+                                ftIII.setFromValue(0);
+                                ftIII.setToValue(1);
                                 ftIII.play();
                             });
+                            ft1II.play();
                         });
+                        ftII.play();
                     });
+                    ft1I.play();
                 });
+                ftI.play();
             });
+
+            ft1.play();
         });
+        ft.play();
+
+
+
     }
 
 }

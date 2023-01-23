@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.year.jarforthenewyear.control.controller">
    <children>
-      <AnchorPane fx:id="Scene4" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="Scene4" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
                <image>
@@ -25,7 +25,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Scene3" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="Scene3" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
             <ImageView fitHeight="406.0" fitWidth="600.0" pickOnBounds="true">
                <image>
@@ -38,7 +38,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Scene2" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="Scene2" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
                <image>
@@ -51,9 +51,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Scene1" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="Scene1" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Scene1pic" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@clock.gif" />
                </image></ImageView>
@@ -64,5 +64,9 @@
             </Label>
          </children>
       </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="button" layoutX="266.0" layoutY="185.0" mnemonicParsing="false" onAction="#onAction" text="Start" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
