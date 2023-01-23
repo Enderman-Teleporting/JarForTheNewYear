@@ -37,59 +37,6 @@ public class controller{
 
     @FXML
     private Label Scene2Text;
-    /*public FadeTransition appear_and_disappear(AnchorPane anchorPane, String text, Label label){
-        label.setText(text);
-        FadeTransition ft = new FadeTransition();
-        FadeTransition ft2= new FadeTransition();
-        ft.setDuration(Duration.seconds(3));
-        ft.setFromValue(0);
-        ft.setToValue(1);
-        ft.setNode(anchorPane);
-        ft.play();
-        ft.setOnFinished(e->{
-            Delay.delayRunInUIThread(new Runnable() {
-                @Override
-                public void run() {
-
-                }
-            },3000);
-            ft2.setDuration(Duration.seconds(3));
-            ft2.setFromValue(1);
-            ft2.setToValue(0);
-            ft2.setNode(anchorPane);
-            ft2.play();
-        });
-        return ft2;
-    }*/
-    /*@FXML
-    void ffe469(ActionEvent event) {
-        Calendar calendar=Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR)-1;
-        int year_now=calendar.get(Calendar.YEAR);
-        Scene1.setVisible(false);
-        Scene2.setVisible(false);
-        Scene3.setVisible(false);
-        Scene4.setVisible(false);
-        FadeTransition ft0=appear_and_disappear(Scene1,"随着时钟的指针",Scene1Text);
-        ft0.setOnFinished(e-> {
-                FadeTransition ft1=appear_and_disappear(Scene2,year+"及其留下的遗憾迎来了终章",Scene2Text);
-                ft1.setOnFinished(ex->{
-                    FadeTransition ft2=appear_and_disappear(Scene3,"而升起的 是"+year_now+"黎明希望与欢愉的太阳",Scene3Text);
-                    ft2.setOnFinished(exe->{
-                        FadeTransition ft3 = new FadeTransition();
-                        ft3.setDuration(Duration.seconds(3000));
-                        ft3.setFromValue(0);
-                        ft3.setToValue(1);
-                        ft3.play();
-
-                    });
-                });
-            });
-
-
-
-    }*/
-
 
     @FXML
     void ffe469(ActionEvent event) {
