@@ -99,6 +99,7 @@ public class controller{
         ft.setFromValue(1);
         ft.setToValue(0);
         ft.setNode(Scene1);
+        ft.play();
         ft.setOnFinished(e->{
             Delay.delayRunInUIThread(new Runnable() {
                 @Override
@@ -119,7 +120,6 @@ public class controller{
                 ftI.setFromValue(1);
                 ftI.setToValue(0);
                 ftI.setNode(Scene2);
-                ftI.play();
                 ftI.setOnFinished(exe->{
                     Delay.delayRunInUIThread(new Runnable() {
                                                  @Override
