@@ -100,11 +100,17 @@ public class controller{
         ft.setNode(Scene1);
         ft.play();
         ft.setOnFinished(e->{
+            Delay.delayRunInUIThread(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            }, 3000);
             ft2.setDuration(Duration.seconds(3));
             ft2.setFromValue(0);
             ft2.setToValue(1);
             ft2.setNode(Scene1);
-            Delay.delayRunInUIThread(ft2.play(),3000);
+            ft2.play();
             ft2.setOnFinished(ex->{
                 FadeTransition ftI = new FadeTransition();
                 FadeTransition ft2I= new FadeTransition();
@@ -115,8 +121,13 @@ public class controller{
                 ftI.setNode(Scene2);
                 ftI.play();
                 ftI.setOnFinished(exe->{
-                    Delay.sleep(3000);
-                    ft2I.setDuration(Duration.seconds(3));
+                    Delay.delayRunInUIThread(new Runnable() {
+                                                 @Override
+                                                 public void run() {
+
+                                                 }
+                                             },3000);
+                            ft2I.setDuration(Duration.seconds(3));
                     ft2I.setFromValue(0);
                     ft2I.setToValue(1);
                     ft2I.setNode(Scene2);
@@ -131,7 +142,12 @@ public class controller{
                         ftII.setNode(Scene3);
                         ftII.play();
                         ftII.setOnFinished(execu->{
-                            Delay.sleep(3000);
+                            Delay.delayRunInUIThread(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                }
+                            },3000);
                             ft2II.setDuration(Duration.seconds(3.0));
                             ft2II.setFromValue(0);
                             ft2II.setToValue(1);
