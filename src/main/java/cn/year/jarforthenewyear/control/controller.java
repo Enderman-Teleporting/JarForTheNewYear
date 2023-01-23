@@ -44,11 +44,12 @@ public class controller{
         ft.setNode(anchorPane);
         ft.play();
         ft.setOnFinished(e->{
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException ex) {
-                throw new RuntimeException(ex);
-            }
+            Delay.delayRunInUIThread(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            },3000);
             ft2.setDuration(Duration.seconds(3));
             ft2.setFromValue(1);
             ft2.setToValue(0);
@@ -56,7 +57,7 @@ public class controller{
             ft2.play();
         });
         return ft2;
-    }/*
+    }*/
     /*@FXML
     void ffe469(ActionEvent event) {
         Calendar calendar=Calendar.getInstance();
@@ -98,7 +99,6 @@ public class controller{
         ft.setFromValue(1);
         ft.setToValue(0);
         ft.setNode(Scene1);
-        ft.play();
         ft.setOnFinished(e->{
             Delay.delayRunInUIThread(new Runnable() {
                 @Override
